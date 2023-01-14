@@ -27,20 +27,20 @@ class RegisterSerializer(serializers.ModelSerializer):
             'last_name',
             'email',
             'password',
-            'password_confirm',
+            'password_confirm'
         ]
 
     def validate(self, data):
-        if data['password'] != data['password_confirm']:
-            raise serializer.ValidationError(
+        if data["password"] != data["password_confirm"]:
+            raise serializers.ValidationError(
                 {'message':'The passwords did not match! Please try again.'}
             )
         return data
     
     def create(self, validated_data):
-        password = validated_data.get('password')
-        validated_data.pop('password_confirm')
-        user = User.objects.create('**validated_date')
-        user.set_password('password')
+        password = validated_data['password']
+        validated_data.pop("password_confirm")
+        user = User.objects.create(**validated_data)
+        user.set_password(password)
         user.save()
         return user
