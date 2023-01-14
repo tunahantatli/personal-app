@@ -1,6 +1,6 @@
 from rest_framework.generics import CreateAPIView
 from django.contrib.auth.models import User
-from .serializer import ResponseSerializer
+from .serializers import RegisterSerializer
 
 # Create your views here.
 class RegisterAPI(CreateAPIView):

@@ -3,5 +3,5 @@ from .views import RegisterAPI
 
 urlpatterns = [
     path('auth/', include('dj_rest_auth.urls')),
-    path('register', RegisterAPI.as_view()),
+    path('register/', RegisterAPI.as_view()),
 ]
