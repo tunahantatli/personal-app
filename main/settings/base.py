@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     # third party apps:
     'drf_yasg',
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'users',
 ]
 
 MIDDLEWARE = [
